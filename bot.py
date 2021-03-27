@@ -1,4 +1,5 @@
 import random
+import os
 
 import requests
 from flask import Flask, request
@@ -6,7 +7,7 @@ from pymessenger.bot import Bot
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = ''
+ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
 VERIFY_TOKEN = 'MYVerifyToken21'
 
 bot = Bot(ACCESS_TOKEN)
@@ -52,7 +53,7 @@ def get_weather():
     city = "293396"
     try:
         res = requests.get("http://api.openweathermap.org/data/2.5/weather",
-                           params={'id': city, 'units': 'metric', 'lang': 'ru', 'APPID': 'APPID'})
+                           params={'id': city, 'units': 'metric', 'lang': 'ru', 'APPID': os.getenv('APPID')})
         data = res.json()
         return f"Weather is {data['main']['temp']} celsius"
     except Exception as e:
