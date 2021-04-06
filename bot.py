@@ -55,7 +55,7 @@ def get_weather():
         res = requests.get("http://api.openweathermap.org/data/2.5/weather",
                            params={'id': city, 'units': 'metric', 'lang': 'ru', 'APPID': os.getenv('APPID')})
         data = res.json()
-        return f"Weather is {data['main']['temp']} celsius"
+        return f"Weather is {data['main']['temp']} °C"
     except Exception as e:
         print("Exception (find):", e)
         pass
