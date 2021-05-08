@@ -1,5 +1,5 @@
-import random
 import os
+import random
 
 import requests
 from flask import Flask, request
@@ -59,6 +59,11 @@ def get_weather():
     except Exception as e:
         print("Exception (find):", e)
         pass
+
+
+def import webbrowser
+
+webbrowser.get("google").open("https://www.google.com")
 
 
 if __name__ == "__main__":
