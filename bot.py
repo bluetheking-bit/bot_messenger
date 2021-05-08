@@ -1,5 +1,6 @@
 import os
 import random
+import webbrowser
 
 import requests
 from flask import Flask, request
@@ -63,8 +64,12 @@ def get_weather():
 
 def import webbrowser
 
-webbrowser.get("google").open("https://www.google.com")
+chrome_path = r"c: \Program Files\Google\Chrome\Application\chrome.exe"
+url = "https://www.google.com/"
 
+webbrowser.register("chrome" , None, webbrowser.BackgroundBrowser(chrome_path) )
+webbrowser.get( "chrome" ).open_new_tab(url)
+        return open("https://www.google.com/")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
