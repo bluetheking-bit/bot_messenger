@@ -30,7 +30,7 @@ def receive_message():
                     response_sent_text = get_weather()
                     send_message(recipient_id, response_sent_text)
                 if message['message'].get('text') in ["Hi!", "hi!", "Hello!", "hello"]:
-                    response_sent_text = get_message()
+                    response_sent_text = get_hello()
                     send_message(recipient_id, response_sent_text)
         return "Message Processed"
 
