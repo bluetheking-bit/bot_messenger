@@ -26,7 +26,7 @@ def receive_message():
             for message in messaging:
                 if message.get('message'):
                     recipient_id = message['sender']['id']
-                if message['message'].get('text'):
+                if message['message'].get('text') == 'weather':
                     response_sent_text = get_weather()
                     send_message(recipient_id, response_sent_text)
         return "Message Processed"
@@ -61,15 +61,6 @@ def get_weather():
         print("Exception (find):", e)
         pass
 
-
-def import webbrowser
-
-chrome_path = r"c: \Program Files\Google\Chrome\Application\chrome.exe"
-url = "https://www.google.com/"
-
-webbrowser.register("chrome" , None, webbrowser.BackgroundBrowser(chrome_path) )
-webbrowser.get( "chrome" ).open_new_tab(url)
-        return open("https://www.google.com/")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
