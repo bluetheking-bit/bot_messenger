@@ -29,7 +29,15 @@ def receive_message():
                 if message['message'].get('text') == 'weather':
                     response_sent_text = get_weather()
                     send_message(recipient_id, response_sent_text)
+                if message['message'].get('text') in ["Hi!", "hi!", "Hello!", "hello"]:
+                    response_sent_text = get_message()
+                    send_message(recipient_id, response_sent_text)
         return "Message Processed"
+
+
+def get_hello():
+    sample_responses = ["Hi!", "hi!", "Hello!", "hello"]
+    return random.choice (sample_responses)
 
 
 def verify_fb_token(token_sent):
